@@ -17,6 +17,7 @@ public class GameSesionController {
 	
 	@RequestMapping("/mygames")
 	public String myGames (String userid, Model model) {
+
 		model.addAttribute("mygames",service.findbyUserId(userid));
 		return "gamesesion/gamesesionList";
 	}

@@ -33,25 +33,9 @@ table , form {
 
 
 </tr>
-</table>
-<table>
-	<tr th:each="gameSesion:${mygames}">
-	
-		<td th:text="${gameSesion.sesionId}"></td>
-		<td th:text="${gameSesion.userid}"></td>
-		<td th:text="${gameSesion.gameId}"></td>
-		<!-- <td th:text="${#temporals.day(gameSesion.timeStamp)}"></td> -->
-		<!-- <td th:text="${gameSesion.timeStamp}"></td> -->
-		<!-- <td th:text="${gameSesion.grelation}"></td> -->
-		
 
-            <!-- <td><a th:href="@{deleteGame(name=${gameSesion.sesionId})}"  
-               class="btn btn-primary">DELETE</a></td> -->
-
-	</tr>
-</table>
 <table>
-	<tr th:each="gameSesion:${gameplayers}">
+	<tr th:each="gameSesion:${gamesesionList}">
 	
 		<td th:text="${gameSesion.sesionId}"></td>
 		<td th:text="${gameSesion.userid}"></td>

@@ -44,9 +44,12 @@ public class GameSesionService {
 	
 	public Iterable<GameSesion> findbyGameId(long gameid){
 		//Long gamesesion= new Long(gameid);
-		HttpEntity<List<GameSesion>> response = template.exchange("http://localhost:8083/webapi/gameplayers",
-				HttpMethod.GET, null, new ParameterizedTypeReference<List<GameSesion>>() {});
-		List<GameSesion> gameplayers = response.getBody();
+		HttpEntity<ArrayList<GameSesion>> response = template.exchange(
+				"http://localhost:8083/webapi/gameplayers/?gameid="+gameid,
+				HttpMethod.GET, 
+				null, 
+				new ParameterizedTypeReference<ArrayList<GameSesion>>() {});
+		ArrayList<GameSesion> gameplayers = response.getBody();
 		return gameplayers;
 	}
 	
